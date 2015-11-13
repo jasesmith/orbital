@@ -1,0 +1,74 @@
+$bg: #FC1770;
+$fg: #fff;
+$xg: #00BCD4;
+
+@keyframes orbit {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+
+.courses {
+  display: flex;
+  justify-content: space-around;
+}
+.course {
+  font-size: 40vmin;
+  width: 1em;
+  height: 1em;
+  background: $bg;
+  color: $fg;
+  border-radius: 1em;
+  position: relative;
+
+  .course-icon {
+    font-size: 35%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.orbital-system {
+  font-size: .1em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  [element] {
+    position: absolute;
+  	top: 0;
+  	right: 40%;
+  	bottom: 50%;
+  	left: 40%;
+  	transform-origin: center bottom;
+  	pointer-events: none;
+    animation-name: orbit;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  [capsule] {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: mix($bg, $fg);
+    border-radius: 1em;
+    width: 1.2em;
+    height: 1.2em;
+    &::after {
+      content: attr(data-title);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 85%;
+    }
+  }
+}
+
+.x-ray [element] {
+  background: rgba($xg, .2);
+}
