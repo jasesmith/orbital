@@ -42,18 +42,16 @@
             <div class="workspace">
 
                 <main class="main">
-                  <div class="courses">
-                    <div class="course">
-                      <orbital items="items"></orbital>
-                      <div class="course-icon">
-                        <fa name="github" fw></fa>
-                      </div>
-                    </div>
-                    <div class="course">
-                      <orbital items="items2"></orbital>
-                      <div class="course-icon">
-                        <fa name="github" fw></fa>
-                      </div>
+                  <div class="toolbar">
+                		<label><input type="checkbox" ng-model="xray"> x-ray</label>
+                		<label><input type="checkbox" ng-model="mixed"> mixed</label>
+                	</div>
+                  <div class="group" ng-class="{'x-ray': xray,'mixed': mixed}">
+                    <div class="item" ng-repeat="item in group">
+                      <orbital items="item.items"></orbital>
+                      <a href="https://github.com/jasesmith/orbital" target="_blank" class="item-icon">
+                        <fa name="{{item.icon}}" fw></fa>
+                      </a>
                     </div>
                   </div>
                 </main>

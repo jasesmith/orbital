@@ -8,18 +8,34 @@
         $scope.headline = 'Orbital';
         $scope.icon = 'dot-circle-o';
 
-        $scope.items = [
-          {id: 1, priority: 1},
-          {id: 2, priority: 3},
-          {id: 3, priority: 1},
-          {id: 4, priority: 2},
-          {id: 5, priority: 1}
-        ];
-
-        $scope.items2 = [
-          {id: 1, priority: 1},
-          {id: 2, priority: 2},
-          {id: 3, priority: 0}
+        $scope.group = [
+          {
+            icon: 'github',
+            items: [
+              {id: 1, priority: 1},
+              {id: 2, priority: 3},
+              {id: 3, priority: 1},
+              {id: 4, priority: 2},
+              {id: 5, priority: 1}
+            ]
+          },
+          {
+            icon: 'github-square',
+            items: [
+              {id: 1, priority: 1},
+              {id: 2, priority: 3},
+              {id: 3, priority: 2},
+              {id: 4, priority: 0}
+            ]
+          },
+          {
+            icon: 'github-alt',
+            items: [
+              {id: 1, priority: 1},
+              {id: 2, priority: 3},
+              {id: 3, priority: 2}
+            ]
+          }
         ];
 
     }]);
